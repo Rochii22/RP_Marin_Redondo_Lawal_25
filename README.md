@@ -41,6 +41,6 @@ python3 crossyroad.py
 * Built-in start, pause, and game over menus.
 
 ## Scoring
-* *+10* points for each forward row.
-* *+50* points per coin collected.
-* Every *10 coins* grants *+1 extra life*.
+* __+10__ points for each forward row.
+* __+50__ points per coin collected.
+* Every *10 coins* grants __+1 extra life__.
