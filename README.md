@@ -2,7 +2,7 @@
 
 An endless Crossy Road–style game built with Python and Pygame.
 
-Move upward, dodge cars, jump on logs, and collect coins to earn extra lives. 🐸🚗
+Move upward, dodge cars, jump on logs, and collect coins to earn extra lives.
 
 ## Requirements
 * Python 3.8 or higher
@@ -20,10 +20,17 @@ python3 crossyroad.py
 ```
 
 ## Controls
-* Movement		Arrows [↑, ↓, ←, →] or Keys [W, A, S, D]
-* Pause/Continue 	ESC
-* Reset Game		R
-* Exit Game		ESC (If end of game) or SPACE (If paused)
+
+| Action                         | Key                     |
+| ------------------------------ | ----------------------- |
+| Move up                        | `↑` or `W`              |
+| Move down                      | `↓` or `S`              |
+| Move left                      | `←` or `A`              |
+| Move right                     | `→` or `D`              |
+| Quick jump upward              | `Space`                 |
+| Pause / Resume                 | `Esc`                   |
+| Restart (on pause/game over)   | `R`                     |
+| Exit (on game over/pause)      | `Esc` or `Space`        |
 
 ## Features
 * Infinite, procedurally generated world.
@@ -34,6 +41,6 @@ python3 crossyroad.py
 * Built-in start, pause, and game over menus.
 
 ## Scoring
-* +10 points for each forward row.
-* +50 points per coin collected.
-* Every 10 coins grants +1 extra life.
+* *+10* points for each forward row.
+* *+50* points per coin collected.
+* Every *10 coins* grants *+1 extra life*.
