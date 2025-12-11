@@ -61,42 +61,42 @@ chmod +x src/ros_game_project/*.py
 The system consists of 4 nodes communicating via ROS Topics and Services.
 
 ### Topics Used:
-__user_information__ (Type: ros_game_project_msgs/user_msg): Contains Name, Username, and Age.
+* __user_information__ (Type: ros_game_project_msgs/user_msg): Contains Name, Username, and Age.
 
-__keyboard_control__ (Type: std_msgs/String): Contains movement and control commands (UP, DOWN, LEFT, RIGHT, FULL, ESC, RESET, END).
+* __keyboard_control__ (Type: std_msgs/String): Contains movement and control commands (UP, DOWN, LEFT, RIGHT, FULL, ESC, RESET, END).
 
-__result_information__ (Type: std_msgs/Int64): Contains the final score upon Game Over.
+* __result_information__ (Type: std_msgs/Int64): Contains the final score upon Game Over.
 
 ### Services Used:
-__difficulty (SetGameDifficulty)__:
+* __difficulty (SetGameDifficulty)__:
 
-Server: game_node.py
+    Server: game_node.py
 
-Client: info_user.py
+    Client: info_user.py
 
-Function: Allows the user node to set the game difficulty (easy/medium/hard) synchronously in the main node before the game starts.
+    Function: Allows the user node to set the game difficulty (easy/medium/hard) synchronously in the main node before the game starts.
 
-__user_score (GetUserScore)__:
+* __user_score (GetUserScore)__:
 
-Server: game_node.py
+    Server: game_node.py
 
-Client: result_node.py (Optional)
+    Client: result_node.py (Optional)
 
-Function: Allows other nodes to query the current player's score from the game_node.
+    Function: Allows other nodes to query the current player's score from the game_node.
 
 ### ROS Parameters:
 The game_node uses parameters defined in the game_launcher.launch file for runtime configuration, such as:
 
-/game_node/user_name: Store the current user's username.
+* __/game_node/user_name:__ Store the current user's username.
 
-/game_node/change_player_color: Toggles a feature related to the player's appearance.
+* __/game_node/change_player_color:__ Toggles a feature related to the player's appearance.
 
-/game_node/screen_param: Variable to know which state the game is currently at (phase1, phase2 or phase3).
+* __/game_node/screen_param:__ Variable to know which state the game is currently at (phase1, phase2 or phase3).
 
 ## 3. How to Run
 The entire system is started using a single roslaunch file, which manages all nodes and dependencies correctly.
 
-Terminal: Start the entire system
+__Terminal: Start the entire system__
 
 Ensure your environment is sourced (source devel/setup.bash) and execute:
 
