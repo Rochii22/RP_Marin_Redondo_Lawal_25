@@ -1,0 +1,13 @@
+<launch>
+    <param name="/user_name" value="None" type="string" />
+
+    <node pkg="ros_game_project" type="game_node.py" name="game_node" output="screen" launch-prefix="gnome-terminal -- ">
+        <param name="screen_param" value="phase1" type="string" />
+        <param name="change_player_color" value="3" type="int" />
+    </node>
+
+    <node pkg="ros_game_project" type="control_node.py" name="control_node" output="screen" launch-prefix="gnome-terminal -- " />
+    <node pkg="ros_game_project" type="info_user.py" name="info_user" output="screen" launch-prefix="gnome-terminal -- " />
+    <node pkg="ros_game_project" type="result_node.py" name="result_node" output="screen" launch-prefix="gnome-terminal -- " />
+
+</launch>
