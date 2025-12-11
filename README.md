@@ -67,7 +67,7 @@ __user_information__
 
 __keyboard_control__ 
     
-*(Type: std_msgs/String): Contains movement and control commands (UP, DOWN, LEFT, RIGHT, FULL, ESC, RESET, END).
+* (Type: std_msgs/String): Contains movement and control commands (UP, DOWN, LEFT, RIGHT, FULL, ESC, RESET, END).
 
 __result_information__ 
     
