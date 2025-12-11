@@ -60,14 +60,14 @@ chmod +x src/ros_game_project/*.py
 ## 2. System Architecture (Topics, Services, Parameters)
 The system consists of 4 nodes communicating via ROS Topics and Services.
 
-* Topics Used:
+### Topics Used:
 __user_information__ (Type: ros_game_project_msgs/user_msg): Contains Name, Username, and Age.
 
 __keyboard_control__ (Type: std_msgs/String): Contains movement and control commands (UP, DOWN, LEFT, RIGHT, FULL, ESC, RESET, END).
 
 __result_information__ (Type: std_msgs/Int64): Contains the final score upon Game Over.
 
-* Services Used:
+### Services Used:
 __difficulty (SetGameDifficulty)__:
 
 Server: game_node.py
@@ -84,7 +84,7 @@ Client: result_node.py (Optional)
 
 Function: Allows other nodes to query the current player's score from the game_node.
 
-* ROS Parameters:
+### ROS Parameters:
 The game_node uses parameters defined in the game_launcher.launch file for runtime configuration, such as:
 
 /game_node/user_name: Store the current user's username.
@@ -110,7 +110,7 @@ __Initial Interaction__
 
 The INFO_USER node (info_user.py) will immediately prompt for your Name, Username, Age, and Difficulty level. You must provide this data for the game to start.
 
-Game Control
+### Game Control
 
 Once the game starts, focus on the CONTROL_NODE terminal and use W/A/S/D to move the character in the Pygame window.
 
