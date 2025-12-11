@@ -72,19 +72,13 @@ __result_information__
 
 ### Services Used:
 __difficulty (SetGameDifficulty)__:
-
     Server: game_node.py
-
     Client: info_user.py
-
     Function: Allows the user node to set the game difficulty (easy/medium/hard) synchronously in the main node before the game starts.
 
 __user_score (GetUserScore)__:
-
     Server: game_node.py
-
     Client: result_node.py (Optional)
-
     Function: Allows other nodes to query the current player's score from the game_node.
 
 ### ROS Parameters:
@@ -119,25 +113,17 @@ Once the game starts, focus on the CONTROL_NODE terminal and use W/A/S/D to move
 
 ## 4. Node Descriptions
 __info_user.py (INFO_USER):__
-
     Role: User Interface and Initialization.
-
     Function: Prompts the user for personal details and difficulty level. It publishes the user data via Topic and then calls the difficulty Service to configure the game before exiting its execution.
 
 __control_node.py (CONTROL_NODE):__
-
     Role: Input Driver and System Commander.
-
     Function: Reads raw keystrokes (W/A/S/D, R, Q/END) and maps them to String commands, publishing them to the keyboard_control Topic.
 
 __game_node.py (GAME_NODE):__
-
     Role: Core Logic, Rendering, and Service Server.
-
     Function: Contains the main Pygame loop (physics, rendering, collisions). It hosts the difficulty and user_score Services and publishes the final score via the result_information Topic. It is a required node for the roslaunch.
 
 __result_node.py (RESULT_NODE):__
-
     Role: Statistics and Reporting.
-
     Function: Listens to both user_information and result_information Topics. Upon receiving the final score, it prints a detailed report in its terminal with the username and the score obtained. Then, asks the game_node for the percentage of the score and publishes it.
